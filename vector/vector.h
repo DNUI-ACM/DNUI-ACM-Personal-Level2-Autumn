@@ -17,7 +17,7 @@ public:
 	vector()
 	{
 		this -> _start = new T[default_capacity];
-		this -> _finish = this -> _start;
+		this -> _finish = this -> _start + 1;
 		this -> capa = default_capacity;
 		this -> _size = 0;
 		this -> _endofstorage = this -> _start + default_capacity;
@@ -25,7 +25,7 @@ public:
 
 	vector(size_type _capacity){
 		this -> _start = new T [_capacity];
-		this -> _finish = _start;
+		this -> _finish = _start + 1;
 		this -> capa = _capacity;
 		this -> _size = 0;
 		this -> _endofstorage = this -> _start + _capacity;
