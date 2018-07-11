@@ -7,6 +7,7 @@ const int default_capacity = 4;
 template<class T>
 class vector{
 public:
+	//static const int default_capacity = 4;
 	using size_type = size_t;
 	using value_type = T;
 	using reference = T&;
@@ -14,7 +15,7 @@ public:
 	using pointer = T*;
 	using const_iterator = const value_type;
 
-	vector()
+	vector()//error
 	{
 		this -> _start = new T[default_capacity];
 		this -> _finish = this -> _start + 1;
@@ -49,6 +50,7 @@ public:
 	{
 		delete [] _start;
 	}
+	
 	void push_back(const value_type &x)
 	{
 		check_capacity();
@@ -191,7 +193,7 @@ public:
 		return _start;
 	}
 
-	bool empty()
+	bool empty() const
 	{
 		return !size();
 	}
@@ -202,7 +204,7 @@ public:
 		assert(pos < size());
 		return _start[pos];
 	}
-
+	
 	reference operator [](size_type index)
 	{
 		assert(-1 < index);
